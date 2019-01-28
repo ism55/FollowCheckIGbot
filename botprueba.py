@@ -1,5 +1,6 @@
 import requests
-
+import time
+from InstagramAPI import InstagramAPI
 
 
 url = "https://api.telegram.org/bot702425285:AAElSrsa99nOv_aG4ZLE7iJk-x7rh9KAvko/"
@@ -42,15 +43,15 @@ chat_msg= get_chat(last_update(get_updates_json(url)))
 #send_mess(chat_id, chat_msg)
 #'Hola, ' + name_id + '. Esto es un bot.'
 
-def main():
-    import time
-    from InstagramAPI import InstagramAPI
-    update_id = last_update(get_updates_json(url))['update_id']
+#def main():
+
+    
     #update_id_before=get_update_id(get_updates_json(url))['update_id']
     # print(update_id)
     # print(update_id_before)
     #chat_msg = get_chat(last_update(get_updates_json(url)))
     while True:
+        update_id = last_update(get_updates_json(url))['update_id']
         chat_msg = get_chat(last_update(get_updates_json(url)))
        # print(chat_msg)
         chat_msg_before = get_chat(get_update_before(get_updates_json(url)))
@@ -117,12 +118,12 @@ def main():
 
     #sleep(1)
 
-if __name__ == '__main__':
-    main()
+#if __name__ == '__main__':
+ #   main()
 
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
-import InstagramAPI
-from InstagramAPI import InstagramAPI
+# import InstagramAPI
+# from InstagramAPI import InstagramAPI
 
 
 # # ##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
