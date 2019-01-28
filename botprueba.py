@@ -56,6 +56,7 @@ def main():
         chat_msg_before = get_chat(get_update_before(get_updates_json(url)))
        # print(chat_msg)
         if update_id == last_update(get_updates_json(url))['update_id']:
+            send_mess(get_chat_id(last_update(get_updates_json(url))), 'Escriba /comando')
            if chat_msg=='/comando':
                send_mess(get_chat_id(last_update(get_updates_json(url))), 'Escriba el usuario')
 
@@ -118,3 +119,57 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
+import InstagramAPI
+from InstagramAPI import InstagramAPI
+
+
+# # ##%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# def igapp():
+#     usr='bismabakery'
+#     pwd='amorodio_19'
+#
+#     InstagramAPI = InstagramAPI(usr, pwd)
+#     InstagramAPI.login()
+#
+#     InstagramAPI.getProfileData()
+#     #user_id=InstagramAPI.LastJson['user']['pk']
+#
+#     user_name = username_ig
+#
+#     InstagramAPI.searchUsername(user_name)
+#     user_id = InstagramAPI.LastJson["user"]["pk"]
+#
+#     #user_id='814703627'
+#     #print(user_id)
+#
+#     InstagramAPI.getUserFollowings(user_id)
+#     #print len(InstagramAPI.LastJson['users'])
+#     following_list=InstagramAPI.LastJson['users']
+#
+#     followers = []
+#     next_max_id = True
+#     while next_max_id:
+#         #print next_max_id
+#         # first iteration hack
+#         if next_max_id == True: next_max_id = ''
+#         _ = InstagramAPI.getUserFollowers(user_id, maxid=next_max_id)
+#         followers.extend(InstagramAPI.LastJson.get('users', []))
+#         next_max_id = InstagramAPI.LastJson.get('next_max_id', '')
+#         time.sleep(1)
+#
+#     followers_list = followers
+#
+#     user_list = map(lambda x: x['username'] , followers_list)
+#     followers_set= set(user_list)
+#    # print 'Seguidores: ', len(followers_set)
+#     #print (followers_set)
+#
+#     user_list = map(lambda x: x['username'] , following_list)
+#     following_set= set(user_list)
+#     print 'Siguiendo: ', len(following_set)
+#     #print(followers_set-following_set)
+#     #print(user_id)
+# #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+#
